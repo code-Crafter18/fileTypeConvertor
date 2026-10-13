@@ -1,0 +1,12 @@
+{
+  "name": "file-type-convertor",
+  "version": "1.0.0",
+  "description": "MERN stack application for file and form transformation",
+  "scripts": {
+    "install:all": "npm --prefix backend install && npm --prefix frontend install",
+    "dev:server": "npm --prefix backend run dev",
+    "dev:client": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm --prefix backend start"
+  }
+}

@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-50 text-surface-800 antialiased transition-colors duration-500;
+  }
+
+  .dark body {
+    @apply bg-surface-950 text-surface-200;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-surface-300;
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    @apply bg-surface-700;
+  }
+
+  ::selection {
+    @apply bg-brand-500/30;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-surface-200/60 bg-white shadow-sm transition-all duration-500 dark:border-surface-700/60 dark:bg-surface-900/50;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-2 hover:shadow-2xl hover:shadow-brand-500/10 dark:hover:shadow-brand-500/20;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-surface-300 bg-white px-4 py-3 text-surface-800 placeholder-surface-400 transition-all duration-300 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/10 dark:border-surface-600 dark:bg-surface-800 dark:text-surface-200 dark:placeholder-surface-500 dark:focus:border-brand-400 dark:focus:ring-brand-400/10;
+  }
+
+  .btn-gradient {
+    @apply relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-300% px-8 py-3 font-semibold text-white shadow-lg shadow-brand-500/25 transition-all duration-500 hover:shadow-xl hover:shadow-brand-500/40 hover:animate-gradient-shift disabled:cursor-not-allowed disabled:opacity-50 disabled:shadow-none;
+  }
+
+  .btn-gradient::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-accent-500 via-brand-500 to-brand-600 bg-300% opacity-0 transition-opacity duration-500;
+  }
+
+  .btn-gradient:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-gradient > * {
+    @apply relative z-10;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-surface-300 bg-white px-6 py-3 font-semibold text-surface-700 transition-all duration-300 hover:border-brand-400 hover:bg-brand-50 hover:text-brand-700 hover:shadow-md dark:border-surface-600 dark:bg-surface-800 dark:text-surface-200 dark:hover:border-brand-500 dark:hover:bg-brand-900/20 dark:hover:text-brand-300;
+  }
+
+  .alert-error {
+    @apply flex items-center gap-3 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-red-700 dark:border-red-800/50 dark:bg-red-900/20 dark:text-red-400;
+  }
+
+  .alert-success {
+    @apply flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-emerald-700 dark:border-emerald-800/50 dark:bg-emerald-900/20 dark:text-emerald-400;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-lg bg-surface-200 dark:bg-surface-700;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-600 via-brand-500 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .bg-mesh {
+    background-image:
+      radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(249, 115, 22, 0.06) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.05) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(249, 115, 22, 0.04) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.06) 0px, transparent 50%);
+  }
+
+  .dark .bg-mesh {
+    background-image:
+      radial-gradient(at 40% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, rgba(249, 115, 22, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+      radial-gradient(at 80% 50%, rgba(249, 115, 22, 0.08) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(139, 92, 246, 0.12) 0px, transparent 50%);
+  }
+}
